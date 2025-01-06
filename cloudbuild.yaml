@@ -39,3 +39,4 @@ steps:
         echo "branch name is not prod, skipping terraform apply"
         exit 0
        fi
+#
