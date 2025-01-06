@@ -8,6 +8,8 @@ steps:
         echo "**********************************"
         echo "$BRANCH NAME"
         echo "**********************************"
+    env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
 
   - id: 'tf-init'
     name: 'hashicorp/terraform:1.0.0'
@@ -16,6 +18,8 @@ steps:
     - '-c'
     - |
         terraform init
+    env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
 
   - id: 'tf-plan'
     name: 'hashicorp/terraform:1.0.0'
@@ -24,6 +28,8 @@ steps:
     - '-c'
     - |
         terraform plan
+    env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
 
   - id: 'tf-apply'
     name: 'hashicorp/terraform:1.0.0'
@@ -39,4 +45,6 @@ steps:
         echo "branch name is not prod, skipping terraform apply"
         exit 0
         fi
+    env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
   #
