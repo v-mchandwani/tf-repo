@@ -1,9 +1,10 @@
 steps:
-- name: "gcr.io/cloud-builders/gcloud"
-  args: ["app", "deploy", "--version", "1alpha"]
-timeout: "1600s"
+- name: 'bash'
+  args: ['echo', 'Hello world!']
+logsBucket: 'tt-cicdbuild-bucket'
+serviceAccount: 'projects/balmy-atom-445612-h4/serviceAccounts/25094830000@cloudbuild.gserviceaccount.com'
 options:
-  logging: CLOUD_LOGGING_ONLY
+  logging: GCS_ONLY
 
  - id: 'branch name'
    name: 'alpine'
