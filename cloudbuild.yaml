@@ -1,10 +1,10 @@
 steps:
 - name: 'bash'
   args: ['echo', 'Hello world!']
-logsBucket: 'tt-cicdbuild-bucket'
+logsBucket: 'gs://tt-cicdbuild-bucket'
 serviceAccount: 'projects/balmy-atom-445612-h4/serviceAccounts/25094830000@cloudbuild.gserviceaccount.com'
 options:
-  logging: GCS_ONLY
+  logging: CLOUD_LOGGING_ONLY
 
 - id: 'branch name'
   name: 'alpine'
