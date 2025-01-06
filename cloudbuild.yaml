@@ -1,4 +1,4 @@
-steps
+steps:
   - id: 'branch name'
     name: 'alpine'
     entrypoint: 'sh'
